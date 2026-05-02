@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://8x4gdllcr2h"]
+
+[node name="Control" type="CanvasLayer"]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 13.5
+offset_top = 11.5
+offset_right = 132.5
+offset_bottom = 51.5
+
+[node name="Label" type="Label" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Godot-Training "

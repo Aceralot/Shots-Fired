@@ -1,16 +1,102 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsicb2whuo56t"]
+[gd_scene load_steps=8 format=3 uid="uid://dsicb2whuo56t"]
 
-[ext_resource type="Script" uid="uid://btxlte0bi4h4f" path="res://Scripts/Player/player_move_and_shoot.gd" id="1_av3cl"]
 [ext_resource type="Texture2D" uid="uid://dn4urbmw4q2j6" path="res://Assets/Sprite/icon.svg" id="1_c8dw4"]
+[ext_resource type="PackedScene" uid="uid://bc6e6jiskj7hk" path="res://Scripts/Player/Gun.tscn" id="3_1nd3q"]
+
+[sub_resource type="GDScript" id="GDScript_av3cl"]
+script/source = "extends CharacterBody2D
+
+var health = 100.0
+
+@export var SPEED = 300.0
+
+signal health_depleted
+
+var helath = 100
+
+func _process(delta: float) -> void:
+	pass
+
+
+func _physics_process(delta) -> void:
+	var direction = Input.get_vector(\"move_left\", \"move_right\", \"move_up\", \"move_down\")
+	    
+	#INVERSION APPLIED HERE
+	direction.y *= 1
+	
+	velocity = direction * SPEED
+	move_and_slide()
+	
+	const DAMAGE_RATE = 5.0
+	var overlapping_mobs = $HitBox.get_overlapping_areas()
+	if overlapping_mobs.size() > 0:
+		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
+		%ProgressBar.value = health
+		if health <= 0.0:
+			health_depleted.emit()
+			
+	
+	
+	#// play animation// unhashtag when animations are ready
+	#if velocity.length() > 0.0:
+		#$AnimationPlayer.play_walk_animation()
+	#else:
+		#$AnimationPlayer.play_idle_animation()
+	
+
+	
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_av3cl"]
 radius = 63.0
 
-[node name="PlayerMoveAndShoot" type="CharacterBody2D"]
-script = ExtResource("1_av3cl")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_av3cl"]
+size = Vector2(126, 129)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_av3cl"]
+bg_color = Color(0, 0, 0, 0.397541)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1nd3q"]
+bg_color = Color(0.7097931, 0.10195923, 0, 0.55122954)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="PlayerMoveAndeShoot" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = SubResource("GDScript_av3cl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = ExtResource("1_c8dw4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CircleShape2D_av3cl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+
+[node name="Gun" parent="Player" instance=ExtResource("3_1nd3q")]
+position = Vector2(127, 4)
+scale = Vector2(5, 5)
+
+[node name="HitBox" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/HitBox"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_av3cl")
+
+[node name="ProgressBar" type="ProgressBar" parent="Player"]
+unique_name_in_owner = true
+offset_left = -103.0
+offset_top = -119.0
+offset_right = 104.0
+offset_bottom = -92.0
+theme_override_styles/background = SubResource("StyleBoxFlat_av3cl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1nd3q")
+value = 100.0
+show_percentage = false

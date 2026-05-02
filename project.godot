@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/Prototyping/LevelDesign.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Assets/Sprite/icon.svg"
 
+[autoload]
+
+GodotTraining="*res://Autoload/Godot-Training.tscn"
+
 [input]
 
 move_left={
@@ -58,8 +62,13 @@ renderer/rendering_method="forward_plus"
 project/editorState=[{
 "column": 0,
 "current": true,
-"line": 13,
-"path": "res://Scripts/Player/player_move_and_shoot.gd",
+"line": 0,
+"path": "res://Scripts/Player/gun.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 0,
+"path": "res://Scripts/player_area_2d.gd",
 "type": "file"
 }]
 project/breakpoints={
