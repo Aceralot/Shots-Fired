@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://0lkxrnsn52p1"]
+[gd_scene load_steps=12 format=3 uid="uid://0lkxrnsn52p1"]
 
-[ext_resource type="Texture2D" uid="uid://dn4urbmw4q2j6" path="res://Assets/Sprite/icon.svg" id="1_0s4r2"]
+[ext_resource type="Texture2D" uid="uid://2nerbly08knp" path="res://Assets/Sprite/Helicopter.png" id="1_0s4r2"]
 [ext_resource type="PackedScene" uid="uid://bc6e6jiskj7hk" path="res://Scripts/Player/Gun.tscn" id="2_ejydr"]
 
 [sub_resource type="GDScript" id="GDScript_av3cl"]
@@ -48,6 +48,35 @@ func _physics_process(delta) -> void:
 	
 "
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejydr"]
+atlas = ExtResource("1_0s4r2")
+region = Rect2(0, 0, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ea7v2"]
+atlas = ExtResource("1_0s4r2")
+region = Rect2(1984, 0, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e535i"]
+atlas = ExtResource("1_0s4r2")
+region = Rect2(0, 1984, 1984, 1984)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h56sh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejydr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ea7v2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e535i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_av3cl"]
 radius = 63.0
 
@@ -71,8 +100,13 @@ corner_radius_bottom_left = 8
 [node name="Player" type="CharacterBody2D"]
 script = SubResource("GDScript_av3cl")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_0s4r2")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = 1.5707964
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_h56sh")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_av3cl")
@@ -80,7 +114,7 @@ shape = SubResource("CircleShape2D_av3cl")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Gun" parent="." instance=ExtResource("2_ejydr")]
-position = Vector2(127, 4)
+position = Vector2(165, 1.0000001)
 scale = Vector2(5, 5)
 
 [node name="HitBox" type="Area2D" parent="."]

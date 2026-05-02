@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bc6e6jiskj7hk"]
+[gd_scene load_steps=5 format=3 uid="uid://bc6e6jiskj7hk"]
 
 [ext_resource type="Script" uid="uid://c84h5fcf3l3s3" path="res://Scripts/Player/gun.gd" id="1_bl7ad"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_meehf"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_meehf"]
+[sub_resource type="Gradient" id="Gradient_bl7ad"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0fye1"]
+gradient = SubResource("Gradient_bl7ad")
+fill_to = Vector2(1, 0.97)
 
 [node name="Gun" type="Node2D"]
 script = ExtResource("1_bl7ad")
@@ -17,9 +22,9 @@ shape = SubResource("CircleShape2D_meehf")
 [node name="WeaponPivot" type="Marker2D" parent="Area2D"]
 
 [node name="Pistol" type="Sprite2D" parent="Area2D/WeaponPivot"]
-position = Vector2(4, 0)
-scale = Vector2(5, 5)
-texture = SubResource("PlaceholderTexture2D_meehf")
+position = Vector2(-14.999998, 0)
+scale = Vector2(0.001, 0.001)
+texture = SubResource("GradientTexture2D_0fye1")
 
 [node name="ShootingPoint" type="Marker2D" parent="Area2D/WeaponPivot/Pistol"]
 unique_name_in_owner = true
