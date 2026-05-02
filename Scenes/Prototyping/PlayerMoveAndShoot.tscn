@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://dsicb2whuo56t"]
+[gd_scene load_steps=4 format=3 uid="uid://dsicb2whuo56t"]
 
-[node name="PlayerMoveAndShoot" type="Node2D" unique_id=320435]
+[ext_resource type="Script" uid="uid://btxlte0bi4h4f" path="res://Scripts/Player/player_move_and_shoot.gd" id="1_av3cl"]
+[ext_resource type="Texture2D" uid="uid://dn4urbmw4q2j6" path="res://Assets/Sprite/icon.svg" id="1_c8dw4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_av3cl"]
+radius = 63.0
+
+[node name="PlayerMoveAndShoot" type="CharacterBody2D"]
+script = ExtResource("1_av3cl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_c8dw4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_av3cl")
