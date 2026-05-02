@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=3 uid="uid://0lkxrnsn52p1"]
+
+[ext_resource type="Texture2D" uid="uid://dn4urbmw4q2j6" path="res://Assets/Sprite/icon.svg" id="1_0s4r2"]
+[ext_resource type="PackedScene" uid="uid://bc6e6jiskj7hk" path="res://Scripts/Player/Gun.tscn" id="2_ejydr"]
+
+[sub_resource type="GDScript" id="GDScript_av3cl"]
+script/source = "extends CharacterBody2D
+
+var health = 100.0
+
+@export var SPEED = 300.0
+
+signal health_depleted
+
+var helath = 100
+
+func _process(delta: float) -> void:
+	look_at( get_global_mouse_position())
+	pass
+
+
+func _physics_process(delta) -> void:
+	var direction = Input.get_vector(\"move_left\", \"move_right\", \"move_up\", \"move_down\")
+	    
+	#INVERSION APPLIED HERE
+	direction.y *= 1
+	
+	velocity = direction * SPEED
+	move_and_slide()
+	
+	const DAMAGE_RATE = 5.0
+	var overlapping_mobs = $HitBox.get_overlapping_areas()
+	if overlapping_mobs.size() > 0:
+		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
+		%ProgressBar.value = health
+		if health <= 0.0:
+			health_depleted.emit()
+			
+	
+	
+	#// play animation// unhashtag when animations are ready
+	#if velocity.length() > 0.0:
+		#$AnimationPlayer.play_walk_animation()
+	#else:
+		#$AnimationPlayer.play_idle_animation()
+	
+
+	
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_av3cl"]
+radius = 63.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_av3cl"]
+size = Vector2(126, 129)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_av3cl"]
+bg_color = Color(0, 0, 0, 0.397541)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1nd3q"]
+bg_color = Color(0.7097931, 0.10195923, 0, 0.55122954)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Player" type="CharacterBody2D"]
+script = SubResource("GDScript_av3cl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0s4r2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_av3cl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Gun" parent="." instance=ExtResource("2_ejydr")]
+position = Vector2(127, 4)
+scale = Vector2(5, 5)
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_av3cl")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -103.0
+offset_top = -119.0
+offset_right = 104.0
+offset_bottom = -92.0
+theme_override_styles/background = SubResource("StyleBoxFlat_av3cl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1nd3q")
+value = 100.0
+show_percentage = false
