@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://0lkxrnsn52p1"]
 
-[ext_resource type="Texture2D" uid="uid://2nerbly08knp" path="res://Assets/Sprite/Helicopter.png" id="1_0s4r2"]
-[ext_resource type="PackedScene" uid="uid://bc6e6jiskj7hk" path="res://Scripts/Player/Gun.tscn" id="2_ejydr"]
+[ext_resource type="Texture2D" uid="uid://2nerbly08knp" path="res://Assets/Sprite/Helicopter.png" id="1_adpkg"]
+[ext_resource type="PackedScene" uid="uid://bc6e6jiskj7hk" path="res://Objects/Entity/Gun.tscn" id="2_om7p1"]
 
 [sub_resource type="GDScript" id="GDScript_av3cl"]
 script/source = "extends CharacterBody2D
@@ -49,15 +49,15 @@ func _physics_process(delta) -> void:
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ejydr"]
-atlas = ExtResource("1_0s4r2")
+atlas = ExtResource("1_adpkg")
 region = Rect2(0, 0, 1984, 1984)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ea7v2"]
-atlas = ExtResource("1_0s4r2")
+atlas = ExtResource("1_adpkg")
 region = Rect2(1984, 0, 1984, 1984)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e535i"]
-atlas = ExtResource("1_0s4r2")
+atlas = ExtResource("1_adpkg")
 region = Rect2(0, 1984, 1984, 1984)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h56sh"]
@@ -84,14 +84,14 @@ radius = 63.0
 size = Vector2(126, 129)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_av3cl"]
-bg_color = Color(0, 0, 0, 0.397541)
+bg_color = Color(0, 0, 0, 0.4)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1nd3q"]
-bg_color = Color(0.7097931, 0.10195923, 0, 0.55122954)
+bg_color = Color(0.7097931, 0.10195923, 0, 0.5)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -113,11 +113,12 @@ shape = SubResource("CircleShape2D_av3cl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[node name="Gun" parent="." instance=ExtResource("2_ejydr")]
+[node name="Gun" parent="." instance=ExtResource("2_om7p1")]
 position = Vector2(165, 1.0000001)
 scale = Vector2(5, 5)
 
 [node name="HitBox" type="Area2D" parent="."]
+modulate = Color(1, 1, 1, 0.49995005)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-1, 0.5)
@@ -125,10 +126,13 @@ shape = SubResource("RectangleShape2D_av3cl")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
-offset_left = -103.0
-offset_top = -119.0
-offset_right = 104.0
-offset_bottom = -92.0
+offset_left = -108.00001
+offset_top = -102.0
+offset_right = 98.99999
+offset_bottom = -75.0
+rotation = 1.5699232
+theme_override_colors/font_color = Color(0, 0, 0, 0.5020492)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.5)
 theme_override_styles/background = SubResource("StyleBoxFlat_av3cl")
 theme_override_styles/fill = SubResource("StyleBoxFlat_1nd3q")
 value = 100.0

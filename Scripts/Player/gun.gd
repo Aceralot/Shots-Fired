@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 func shoot():
 	if Input.is_action_pressed( "shoot" ):
-		const BULLET = preload("res://Scripts/Player/Bullet.tscn")
+		const BULLET = preload("res://Objects/Entity/Bullet.tscn")
 		var new_bullet = BULLET.instantiate()
 		new_bullet.global_position = %ShootingPoint.global_position
 		new_bullet.global_rotation = %ShootingPoint.global_rotation

@@ -61,9 +61,9 @@ renderer/rendering_method="forward_plus"
 [xogot]
 
 project/editorState=[{
-"column": 0,
+"column": 60,
 "current": true,
-"line": 13,
+"line": 14,
 "path": "res://Scripts/Player/gun.gd",
 "type": "file"
 }, {
