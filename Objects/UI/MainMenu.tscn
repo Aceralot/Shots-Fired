@@ -1,6 +1,8 @@
-[gd_scene format=3 uid="uid://can660rjgt5nw"]
+[gd_scene load_steps=2 format=3 uid="uid://can660rjgt5nw"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Script" uid="uid://c5bf0kvvlokn7" path="res://Scripts/UI/ui_video.gd" id="1_xg5s2"]
+
+[node name="MainMenu" type="Control"]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
@@ -161,7 +163,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Language "
 
-[node name="Video" type="VBoxContainer" parent="."]
+[node name="Video" type="VBoxContainer" parent="." node_paths=PackedStringArray("resolution_option", "fullscreen_check", "borderless_check", "vsync_check")]
 visible = false
 custom_minimum_size = Vector2(165, 150)
 layout_mode = 1
@@ -178,6 +180,11 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5, 5)
 pivot_offset = Vector2(75, 75)
+script = ExtResource("1_xg5s2")
+resolution_option = NodePath("HBoxContainer/Resolution")
+fullscreen_check = NodePath("HBoxContainer4/Fullscreen")
+borderless_check = NodePath("HBoxContainer3/Borderless")
+vsync_check = NodePath("HBoxContainer2/VSync")
 
 [node name="Label" type="Label" parent="Video"]
 layout_mode = 2

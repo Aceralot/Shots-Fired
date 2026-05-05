@@ -69,7 +69,6 @@ renderer/rendering_method="forward_plus"
 
 project/editorState=[{
 "column": 0,
-"current": true,
 "line": 14,
 "path": "res://Scripts/Player/gun.gd",
 "type": "file"
@@ -77,6 +76,12 @@ project/editorState=[{
 "column": 0,
 "line": 0,
 "path": "res://Scripts/player_area_2d.gd",
+"type": "file"
+}, {
+"column": 5,
+"current": true,
+"line": 53,
+"path": "res://Objects/ui_video.gd",
 "type": "file"
 }]
 project/breakpoints={
