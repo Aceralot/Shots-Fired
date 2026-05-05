@@ -19,6 +19,13 @@ config/icon="res://Assets/Sprite/icon.svg"
 
 GodotTraining="*res://Autoload/Godot-Training.tscn"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/stretch/mode="viewport"
+
 [input]
 
 move_left={
@@ -61,7 +68,7 @@ renderer/rendering_method="forward_plus"
 [xogot]
 
 project/editorState=[{
-"column": 60,
+"column": 0,
 "current": true,
 "line": 14,
 "path": "res://Scripts/Player/gun.gd",
