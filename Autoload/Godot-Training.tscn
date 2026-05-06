@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://8x4gdllcr2h"]
 
 [node name="Control" type="CanvasLayer"]
-scale = Vector2(2, 2)
-transform = Transform2D(2, 0, 0, 2, 0, 0)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

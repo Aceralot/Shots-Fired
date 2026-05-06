@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot-train"
-run/main_scene="res://Scenes/Prototyping/LevelDesign.tscn"
+run/main_scene="res://Objects/UI/MainMenu.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Assets/Sprite/icon.svg"
 
@@ -21,9 +21,8 @@ GodotTraining="*res://Autoload/Godot-Training.tscn"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/size/mode=3
+window/size/viewport_width=480
+window/size/viewport_height=270
 window/stretch/mode="viewport"
 
 [input]
@@ -78,13 +77,14 @@ project/editorState=[{
 "path": "res://Scripts/player_area_2d.gd",
 "type": "file"
 }, {
-"column": 5,
+"column": 36,
 "current": true,
-"line": 53,
-"path": "res://Objects/ui_video.gd",
+"line": 18,
+"path": "res://Scripts/UI/Videoscript.gd",
 "type": "file"
 }]
 project/breakpoints={
 "res://Scenes/Prototyping/player_move_and_shoot.gd": PackedInt32Array(3),
-"res://Scripts/Player/player_move_and_shoot.gd": PackedInt32Array()
+"res://Scripts/Player/player_move_and_shoot.gd": PackedInt32Array(),
+"res://Scripts/UI/Videoscript.gd": PackedInt32Array()
 }
