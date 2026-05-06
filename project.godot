@@ -85,9 +85,8 @@ project/editorState=[{
 "path": "res://Scripts/player_area_2d.gd",
 "type": "file"
 }, {
-"column": 24,
-"current": true,
-"line": 18,
+"column": 28,
+"line": 44,
 "path": "res://Scripts/UI/Videoscript.gd",
 "type": "file"
 }, {
@@ -107,6 +106,7 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
+"current": true,
 "line": 0,
 "path": "res://Scripts/UI/mainmenu.gd",
 "type": "file"

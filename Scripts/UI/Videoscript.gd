@@ -18,10 +18,10 @@ func _ready():
 	
 	load_current_settings()
 	
-	resolution_option.item_selected.connect(_on_resolution_selected)
-	fullscreen_check.toggled.connect(_on_fullscreen_toggled)
-	borderless_check.toggled.connect(_on_borderless_toggled)
-	vsync_check.toggled.connect(_on_vsync_toggled)
+	resolution_option.item_selected.connect( _on_resolution_selected )
+	fullscreen_check.toggled.connect( _on_fullscreen_toggled )
+	borderless_check.toggled.connect( _on_borderless_toggled )
+	vsync_check.toggled.connect( _on_vsync_toggled )
 
 func load_current_settings():
 	var mode = DisplayServer.window_get_mode()
@@ -42,16 +42,20 @@ func _on_resolution_selected(index: int):
 	var parts = text.split("x")
 	if parts.size() == 2:
 		DisplayServer.window_set_size(Vector2i(int(parts[0]), int(parts[1])))
+		print("Resolution Selected")
 
 func _on_fullscreen_toggled(enabled: bool):
 	if enabled:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		print("Fullscreen Toggled")
 
 func _on_borderless_toggled(enabled: bool):
 	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, enabled)
+	print("Borderless Toggled")
 
 func _on_vsync_toggled(enabled: bool):
 	var mode = DisplayServer.VSYNC_ENABLED if enabled else DisplayServer.VSYNC_DISABLED
 	DisplayServer.window_set_vsync_mode(mode)
+	print("VSYNC Toggled")

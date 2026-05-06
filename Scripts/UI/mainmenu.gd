@@ -1,12 +1,14 @@
 extends Control
 
 @export var menu: VBoxContainer
+@export var start: Button
 @export var main_settings: VBoxContainer
 @export var video_settings: VBoxContainer
 @export var audio_settings: VBoxContainer
 @export var controls_settings: VBoxContainer
 @export var language_settings: VBoxContainer
 @export var back_button: Button
+@export var quit: Button
 
 @export var settings_button : Button
 @export var video_button: Button
@@ -22,12 +24,14 @@ func _ready():
 	_show_panel(menu)
 	_update_back_button()
 
+	start.pressed.connect( _on_start_pressed )
 	back_button.pressed.connect(_on_back_pressed)
 	settings_button.pressed.connect(_navigate_to.bind(main_settings))
 	video_button.pressed.connect(_navigate_to.bind(video_settings))
 	audio_button.pressed.connect(_navigate_to.bind(audio_settings))
 	controls_button.pressed.connect(_navigate_to.bind(controls_settings))
 	language_button.pressed.connect(_navigate_to.bind(language_settings))
+	quit.pressed.connect( _on_quit_pressed )
 
 func _show_panel(panel: Control):
 	panel.visible = true
@@ -58,6 +62,6 @@ func _on_quit_pressed():
 	get_tree().quit()
 
 
-func _on_start_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Prototyping/LevelDesign.tscn")
-	pass # Replace with function body.
+func _on_start_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Prototyping/PlayerMoveAndShoot.tscn")
+	print("changed Scene") # Replace with function body.

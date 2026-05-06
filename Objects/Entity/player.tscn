@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://0lkxrnsn52p1"]
+[gd_scene format=3 uid="uid://0lkxrnsn52p1"]
 
 [ext_resource type="Texture2D" uid="uid://2nerbly08knp" path="res://Assets/Sprite/Helicopter.png" id="1_adpkg"]
 [ext_resource type="PackedScene" uid="uid://bc6e6jiskj7hk" path="res://Objects/Entity/Gun.tscn" id="2_om7p1"]
@@ -8,7 +8,7 @@ script/source = "extends CharacterBody2D
 
 var health = 100.0
 
-@export var SPEED = 300.0
+@export var SPEED = 100
 
 signal health_depleted
 
@@ -97,10 +97,10 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=41667982]
 script = SubResource("GDScript_av3cl")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=68806775]
 texture_filter = 1
 rotation = 1.5707964
 scale = Vector2(0.1, 0.1)
@@ -108,23 +108,23 @@ sprite_frames = SubResource("SpriteFrames_h56sh")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=597745582]
 shape = SubResource("CircleShape2D_av3cl")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1455630058]
 
-[node name="Gun" parent="." instance=ExtResource("2_om7p1")]
+[node name="Gun" parent="." unique_id=639567379 instance=ExtResource("2_om7p1")]
 position = Vector2(165, 1.0000001)
 scale = Vector2(5, 5)
 
-[node name="HitBox" type="Area2D" parent="."]
+[node name="HitBox" type="Area2D" parent="." unique_id=1572353922]
 modulate = Color(1, 1, 1, 0.49995005)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=761902779]
 position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_av3cl")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1175254099]
 unique_name_in_owner = true
 offset_left = -108.00001
 offset_top = -102.0

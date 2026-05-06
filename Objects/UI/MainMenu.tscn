@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://2mxdmrwb6p25" path="res://Scripts/UI/Language.gd" id="4_hjnax"]
 [ext_resource type="Script" uid="uid://dc68rv8fur4n7" path="res://Scripts/UI/controls.gd" id="4_ne2t5"]
 
-[node name="MainMenu" type="Control" unique_id=1115050847 node_paths=PackedStringArray("menu", "main_settings", "video_settings", "audio_settings", "controls_settings", "language_settings", "back_button", "settings_button", "video_button", "audio_button", "controls_button", "language_button")]
+[node name="MainMenu" type="Control" unique_id=1115050847 node_paths=PackedStringArray("menu", "start", "main_settings", "video_settings", "audio_settings", "controls_settings", "language_settings", "back_button", "quit", "settings_button", "video_button", "audio_button", "controls_button", "language_button")]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
@@ -19,12 +19,14 @@ pivot_offset = Vector2(240, 135)
 size_flags_horizontal = 4
 script = ExtResource("1_hhbtw")
 menu = NodePath("Menu")
+start = NodePath("Menu/Control/Start")
 main_settings = NodePath("Settings")
 video_settings = NodePath("Video")
 audio_settings = NodePath("Audio")
 controls_settings = NodePath("Controls")
 language_settings = NodePath("Language")
 back_button = NodePath("Back")
+quit = NodePath("Menu/Control3/Quit")
 settings_button = NodePath("Menu/Control2/Options")
 video_button = NodePath("Settings/Control/Video")
 audio_button = NodePath("Settings/Control2/Audio")
@@ -32,6 +34,7 @@ controls_button = NodePath("Settings/Control3/Controls")
 language_button = NodePath("Settings/Control4/Language")
 
 [node name="Menu" type="VBoxContainer" parent="." unique_id=1538954016]
+visible = false
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 8
@@ -191,10 +194,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.5
-offset_top = -75.0
-offset_right = 82.5
-offset_bottom = 75.0
+offset_left = -223.33334
+offset_top = -119.99998
+offset_right = -58.333344
+offset_bottom = 30.00003
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5, 5)
