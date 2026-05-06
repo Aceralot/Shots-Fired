@@ -99,6 +99,7 @@ pivot_offset = Vector2(50, 15)
 text = "Quit"
 
 [node name="Settings" type="VBoxContainer" parent="."]
+visible = false
 custom_minimum_size = Vector2(100, 130)
 layout_mode = 1
 anchors_preset = 8
@@ -180,6 +181,7 @@ grow_vertical = 2
 text = "Language "
 
 [node name="Video" type="VBoxContainer" parent="." node_paths=PackedStringArray("resolution_option", "fullscreen_check", "borderless_check", "vsync_check")]
+visible = false
 custom_minimum_size = Vector2(165, 150)
 layout_mode = 1
 anchors_preset = 8
@@ -255,6 +257,7 @@ text = "VSync"
 layout_mode = 2
 
 [node name="Audio" type="VBoxContainer" parent="." node_paths=PackedStringArray("master_slider", "music_slider", "sfx_slider")]
+visible = false
 custom_minimum_size = Vector2(195, 150)
 layout_mode = 1
 anchors_preset = 8
@@ -273,7 +276,7 @@ pivot_offset = Vector2(100, 75)
 script = ExtResource("2_qsbgu")
 master_slider = NodePath("HBoxContainer/Master")
 music_slider = NodePath("HBoxContainer2/Music")
-sfx_slider = NodePath("HBoxContainer2/Music")
+sfx_slider = NodePath("HBoxContainer3/SFX")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Audio"]
@@ -321,6 +324,7 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
 [node name="Controls" type="VBoxContainer" parent="." node_paths=PackedStringArray("up_button", "down_button", "left_button", "right_button")]
+visible = false
 custom_minimum_size = Vector2(150, 175)
 layout_mode = 1
 anchors_preset = 8
@@ -401,6 +405,7 @@ layout_mode = 2
 text = "Right"
 
 [node name="Language" type="VBoxContainer" parent="." node_paths=PackedStringArray("language_option")]
+visible = false
 custom_minimum_size = Vector2(200, 150)
 layout_mode = 1
 anchors_preset = 8
@@ -441,10 +446,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 340.0
-offset_top = -340.0
-offset_right = 402.0
-offset_bottom = -309.0
+offset_left = -313.33337
+offset_top = 78.33334
+offset_right = -251.33337
+offset_bottom = 109.33334
 grow_vertical = 0
 scale = Vector2(5, 5)
 pivot_offset = Vector2(30, 15)
