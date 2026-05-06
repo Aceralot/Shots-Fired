@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://can660rjgt5nw"]
+[gd_scene load_steps=6 format=3 uid="uid://can660rjgt5nw"]
 
+[ext_resource type="Script" uid="uid://na8uqw2rafhm" path="res://Scripts/UI/mainmenu.gd" id="1_hhbtw"]
 [ext_resource type="Script" uid="uid://bngg7aicew1kj" path="res://Scripts/UI/Videoscript.gd" id="1_xg5s2"]
+[ext_resource type="Script" uid="uid://cxp4wjk05fhkw" path="res://Scripts/UI/audio.gd" id="2_qsbgu"]
+[ext_resource type="Script" uid="uid://dc68rv8fur4n7" path="res://Scripts/UI/controls.gd" id="3_1kbew"]
+[ext_resource type="Script" uid="uid://2mxdmrwb6p25" path="res://Scripts/UI/Language.gd" id="4_hjnax"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("menu", "main_settings", "video_settings", "audio_settings", "language_settings", "back_button", "video_button", "audio_button", "controls_button", "language_button")]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
@@ -11,11 +15,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.3, 0.3)
-pivot_offset = Vector2(220, 140)
+pivot_offset = Vector2(240, 135)
 size_flags_horizontal = 4
+script = ExtResource("1_hhbtw")
+menu = NodePath("Menu")
+main_settings = NodePath("Settings")
+video_settings = NodePath("Video")
+audio_settings = NodePath("Audio")
+language_settings = NodePath("Language")
+back_button = NodePath("Menu/Control3/Quit")
+video_button = NodePath("Settings/Control/Video")
+audio_button = NodePath("Settings/Control2/Audio")
+controls_button = NodePath("Settings/Control3/Controls")
+language_button = NodePath("Settings/Control4/Language")
 
 [node name="Menu" type="VBoxContainer" parent="."]
-visible = false
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 8
@@ -85,7 +99,6 @@ pivot_offset = Vector2(50, 15)
 text = "Quit"
 
 [node name="Settings" type="VBoxContainer" parent="."]
-visible = false
 custom_minimum_size = Vector2(100, 130)
 layout_mode = 1
 anchors_preset = 8
@@ -167,7 +180,6 @@ grow_vertical = 2
 text = "Language "
 
 [node name="Video" type="VBoxContainer" parent="." node_paths=PackedStringArray("resolution_option", "fullscreen_check", "borderless_check", "vsync_check")]
-visible = false
 custom_minimum_size = Vector2(165, 150)
 layout_mode = 1
 anchors_preset = 8
@@ -242,8 +254,7 @@ text = "VSync"
 [node name="VSync" type="CheckBox" parent="Video/HBoxContainer2"]
 layout_mode = 2
 
-[node name="Audio" type="VBoxContainer" parent="."]
-visible = false
+[node name="Audio" type="VBoxContainer" parent="." node_paths=PackedStringArray("master_slider", "music_slider", "sfx_slider")]
 custom_minimum_size = Vector2(195, 150)
 layout_mode = 1
 anchors_preset = 8
@@ -259,6 +270,10 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5, 5)
 pivot_offset = Vector2(100, 75)
+script = ExtResource("2_qsbgu")
+master_slider = NodePath("HBoxContainer/Master")
+music_slider = NodePath("HBoxContainer2/Music")
+sfx_slider = NodePath("HBoxContainer2/Music")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Audio"]
@@ -305,8 +320,7 @@ text = "SFX"
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
-[node name="Controls" type="VBoxContainer" parent="."]
-visible = false
+[node name="Controls" type="VBoxContainer" parent="." node_paths=PackedStringArray("up_button", "down_button", "left_button", "right_button")]
 custom_minimum_size = Vector2(150, 175)
 layout_mode = 1
 anchors_preset = 8
@@ -322,6 +336,11 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5, 5)
 pivot_offset = Vector2(75, 90)
+script = ExtResource("3_1kbew")
+up_button = NodePath("VBoxContainer/Up")
+down_button = NodePath("VBoxContainer2/Down")
+left_button = NodePath("VBoxContainer3/Left")
+right_button = NodePath("VBoxContainer4/Right")
 
 [node name="Label" type="Label" parent="Controls"]
 layout_mode = 2
@@ -338,7 +357,7 @@ theme_override_constants/separation = 25
 layout_mode = 2
 text = "Up"
 
-[node name="Button" type="Button" parent="Controls/VBoxContainer"]
+[node name="Up" type="Button" parent="Controls/VBoxContainer"]
 layout_mode = 2
 text = "UP"
 
@@ -351,7 +370,7 @@ theme_override_constants/separation = 25
 layout_mode = 2
 text = "Down"
 
-[node name="Button" type="Button" parent="Controls/VBoxContainer2"]
+[node name="Down" type="Button" parent="Controls/VBoxContainer2"]
 layout_mode = 2
 text = "Down"
 
@@ -364,7 +383,7 @@ theme_override_constants/separation = 25
 layout_mode = 2
 text = "Left"
 
-[node name="Button" type="Button" parent="Controls/VBoxContainer3"]
+[node name="Left" type="Button" parent="Controls/VBoxContainer3"]
 layout_mode = 2
 text = "Left"
 
@@ -377,12 +396,11 @@ theme_override_constants/separation = 25
 layout_mode = 2
 text = "Right"
 
-[node name="Button" type="Button" parent="Controls/VBoxContainer4"]
+[node name="Right" type="Button" parent="Controls/VBoxContainer4"]
 layout_mode = 2
 text = "Right"
 
-[node name="Language" type="VBoxContainer" parent="."]
-visible = false
+[node name="Language" type="VBoxContainer" parent="." node_paths=PackedStringArray("language_option")]
 custom_minimum_size = Vector2(200, 150)
 layout_mode = 1
 anchors_preset = 8
@@ -398,6 +416,8 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5, 5)
 pivot_offset = Vector2(100, 75)
+script = ExtResource("4_hjnax")
+language_option = NodePath("HBoxContainer/Language")
 
 [node name="Label" type="Label" parent="Language"]
 layout_mode = 2
@@ -417,7 +437,6 @@ text = "Language"
 layout_mode = 2
 
 [node name="Back" type="Button" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0

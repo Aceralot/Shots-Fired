@@ -15,6 +15,10 @@ run/main_scene="res://Objects/UI/MainMenu.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Assets/Sprite/icon.svg"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
 GodotTraining="*res://Autoload/Godot-Training.tscn"
@@ -77,14 +81,35 @@ project/editorState=[{
 "path": "res://Scripts/player_area_2d.gd",
 "type": "file"
 }, {
-"column": 36,
-"current": true,
-"line": 18,
+"column": 0,
+"line": 0,
 "path": "res://Scripts/UI/Videoscript.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 28,
+"path": "res://Scripts/UI/audio.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 64,
+"path": "res://Scripts/UI/controls.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 21,
+"path": "res://Scripts/UI/Language.gd",
+"type": "file"
+}, {
+"column": 0,
+"current": true,
+"line": 63,
+"path": "res://Scripts/UI/mainmenu.gd",
 "type": "file"
 }]
 project/breakpoints={
 "res://Scenes/Prototyping/player_move_and_shoot.gd": PackedInt32Array(3),
 "res://Scripts/Player/player_move_and_shoot.gd": PackedInt32Array(),
-"res://Scripts/UI/Videoscript.gd": PackedInt32Array()
+"res://Scripts/UI/Videoscript.gd": PackedInt32Array(),
+"res://Scripts/UI/controls.gd": PackedInt32Array()
 }
