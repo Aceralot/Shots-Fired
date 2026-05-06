@@ -34,7 +34,6 @@ controls_button = NodePath("Settings/Control3/Controls")
 language_button = NodePath("Settings/Control4/Language")
 
 [node name="Menu" type="VBoxContainer" parent="." unique_id=1538954016]
-visible = false
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 8

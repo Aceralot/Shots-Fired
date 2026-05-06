@@ -85,7 +85,7 @@ project/editorState=[{
 "path": "res://Scripts/player_area_2d.gd",
 "type": "file"
 }, {
-"column": 28,
+"column": 0,
 "line": 44,
 "path": "res://Scripts/UI/Videoscript.gd",
 "type": "file"
