@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Godot-train"
 run/main_scene="res://Objects/UI/MainMenu.tscn"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/Sprite/icon.svg"
 
 [audio]
@@ -81,9 +85,8 @@ project/editorState=[{
 "path": "res://Scripts/player_area_2d.gd",
 "type": "file"
 }, {
-"column": 1,
-"current": true,
-"line": 18,
+"column": 0,
+"line": 16,
 "path": "res://Scripts/UI/Videoscript.gd",
 "type": "file"
 }, {
@@ -98,12 +101,23 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"line": 28,
+"current": true,
+"line": 12,
 "path": "res://Scripts/UI/Language.gd",
 "type": "file"
 }, {
 "column": 0,
-"line": 63,
+"line": 0,
+"path": "/private/var/mobile/Containers/Shared/AppGroup/DE2F46C9-9711-400D-BBB2-309BE3E5307E/File Provider Storage/Repositories/Godot-Training/Scripts/UI/audio.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 32,
+"path": "/private/var/mobile/Containers/Shared/AppGroup/DE2F46C9-9711-400D-BBB2-309BE3E5307E/File Provider Storage/Repositories/Godot-Training/Scripts/UI/mainmenu.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 32,
 "path": "res://Scripts/UI/mainmenu.gd",
 "type": "file"
 }]
@@ -113,3 +127,4 @@ project/breakpoints={
 "res://Scripts/UI/Videoscript.gd": PackedInt32Array(),
 "res://Scripts/UI/controls.gd": PackedInt32Array()
 }
+project/disabled_breakpoints={}
