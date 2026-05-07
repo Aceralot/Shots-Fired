@@ -1,18 +1,24 @@
 extends Area2D
-
+class_name Bullet
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
+var score = 0
+const SPEED = 1000
+const RANGE = 1200
+signal scored
 
+var direction = Vector2.RIGHT.rotated( rotation )
 var travelled_distance = 0
+
+func _process(delta: float) -> void:
+	translate( direction * SPEED * delta)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	const SPEED = 1000
-	const RANGE = 1200
-	var direction = Vector2.RIGHT.rotated( rotation )
 	position += direction * SPEED * delta
 	
 	travelled_distance += SPEED * delta
@@ -25,3 +31,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.has_method( "take_damage" ):
 		body.take_damage
 	pass # Replace with function body.
+
+
+

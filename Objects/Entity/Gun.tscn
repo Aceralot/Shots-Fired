@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bc6e6jiskj7hk"]
+[gd_scene format=3 uid="uid://bc6e6jiskj7hk"]
 
 [ext_resource type="Script" uid="uid://c84h5fcf3l3s3" path="res://Scripts/Player/gun.gd" id="1_bl7ad"]
 
@@ -11,28 +11,28 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_bl7ad")
 fill_to = Vector2(1, 0.97)
 
-[node name="Gun" type="Node2D"]
+[node name="Gun" type="Node2D" unique_id=921963425]
 script = ExtResource("1_bl7ad")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=220591768]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1971144593]
 shape = SubResource("CircleShape2D_meehf")
 
-[node name="WeaponPivot" type="Marker2D" parent="Area2D"]
+[node name="WeaponPivot" type="Marker2D" parent="Area2D" unique_id=1578542738]
 
-[node name="Pistol" type="Sprite2D" parent="Area2D/WeaponPivot"]
+[node name="Pistol" type="Sprite2D" parent="Area2D/WeaponPivot" unique_id=1176005480]
 position = Vector2(-14.999998, 0)
 scale = Vector2(0.001, 0.001)
 texture = SubResource("GradientTexture2D_0fye1")
 
-[node name="ShootingPoint" type="Marker2D" parent="Area2D/WeaponPivot/Pistol"]
+[node name="ShootingPoint" type="Marker2D" parent="Area2D/WeaponPivot/Pistol" unique_id=1580824092]
 unique_name_in_owner = true
 position = Vector2(0.39999998, -0.19999999)
 rotation = -1.5707964
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
+[node name="Timer" type="Timer" parent="." unique_id=1102594328]
+wait_time = 0.2
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timeout"]

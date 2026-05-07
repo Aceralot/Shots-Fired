@@ -38,11 +38,7 @@ window/stretch/mode="viewport"
 move_left={
 "deadzone": 0.5,
 "events": Array[InputEvent]([Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
-])
-}
-move_right={
-"deadzone": 0.5,
-"events": Array[InputEvent]([Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":-1.0,"script":null)
 ])
 }
 move_up={
@@ -62,6 +58,11 @@ shoot={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":79,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ])
 }
+" move_right"={
+"deadzone": 0.5,
+"events": Array[InputEvent]([Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+])
+}
 
 [physics]
 
@@ -76,12 +77,12 @@ renderer/rendering_method="forward_plus"
 
 project/editorState=[{
 "column": 0,
-"line": 14,
+"line": 0,
 "path": "res://Scripts/Player/gun.gd",
 "type": "file"
 }, {
 "column": 0,
-"line": 0,
+"line": 35,
 "path": "res://Scripts/player_area_2d.gd",
 "type": "file"
 }, {
@@ -111,14 +112,18 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"current": true,
-"line": 10,
+"line": 9,
 "path": "res://Scripts/Utils/enemy_spawner.gd",
 "type": "file"
 }, {
-"column": 4,
-"line": 4,
+"column": 0,
+"line": 6,
 "path": "res://Scripts/Core/enemy.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 0,
+"path": "res://Scripts/UI/score.gd",
 "type": "file"
 }]
 project/breakpoints={
@@ -126,6 +131,7 @@ project/breakpoints={
 "res://Scripts/Core/enemy.gd": PackedInt32Array(),
 "res://Scripts/Player/player_move_and_shoot.gd": PackedInt32Array(),
 "res://Scripts/UI/Videoscript.gd": PackedInt32Array(),
-"res://Scripts/UI/controls.gd": PackedInt32Array()
+"res://Scripts/UI/controls.gd": PackedInt32Array(),
+"res://Scripts/player_area_2d.gd": PackedInt32Array()
 }
 project/disabled_breakpoints={}

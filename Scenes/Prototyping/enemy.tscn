@@ -29,7 +29,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gorhj"]
+radius = 26.076809
+
 [node name="Enemy" type="CharacterBody2D" unique_id=1174540543]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_gorhj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=405697487]
@@ -40,3 +44,12 @@ shape = SubResource("CapsuleShape2D_wlrqd")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_3ldh3")
 animation = &"Idle"
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=864339758]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=165868950]
+position = Vector2(-1.4901161e-09, 0)
+scale = Vector2(1, 0.9)
+shape = SubResource("CircleShape2D_gorhj")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_area_entered"]
