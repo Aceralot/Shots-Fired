@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bgm6ppsjn4jm5"]
+
+[ext_resource type="Script" uid="uid://02cfwadqwy3m" path="res://Scripts/Utils/enemy_spawner.gd" id="1_adyta"]
+[ext_resource type="PackedScene" uid="uid://s5jf7yuu7166" path="res://Scenes/Prototyping/EnemyChasing.tscn" id="2_p4u4m"]
+
+[node name="Enemy_Spawner" type="Node2D" unique_id=866135157]
+script = ExtResource("1_adyta")
+enemy_prefab = ExtResource("2_p4u4m")
+
+[node name="Timer" type="Timer" parent="." unique_id=468012665]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timeout"]

@@ -1,3 +1,17 @@
 [gd_scene format=3 uid="uid://21i8vro25182"]
 
+[ext_resource type="PackedScene" uid="uid://cfto5xdiaq4xj" path="res://Scenes/Prototyping/enemy.tscn" id="2_hp3xh"]
+[ext_resource type="PackedScene" uid="uid://0lkxrnsn52p1" path="res://Objects/Entity/player.tscn" id="3_3jyhc"]
+[ext_resource type="PackedScene" uid="uid://bgm6ppsjn4jm5" path="res://Objects/Environment/Enemy_Spawner.tscn" id="3_riaij"]
+
 [node name="LevelDesign" type="Node2D" unique_id=1475208290]
+position = Vector2(1, 0)
+
+[node name="Player" parent="." unique_id=41667982 instance=ExtResource("3_3jyhc")]
+position = Vector2(74, 187)
+scale = Vector2(0.3, 0.3)
+
+[node name="Enemy_Spawner" parent="." unique_id=866135157 node_paths=PackedStringArray("target") instance=ExtResource("3_riaij")]
+position = Vector2(308, 55)
+enemy_prefab = ExtResource("2_hp3xh")
+target = NodePath("../Player")

@@ -63,5 +63,5 @@ func _on_quit_pressed():
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Prototyping/PlayerMoveAndShoot.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Prototyping/LevelDesign.tscn")
 	print("changed Scene") # Replace with function body.

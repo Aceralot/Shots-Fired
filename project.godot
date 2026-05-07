@@ -106,13 +106,24 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"current": true,
 "line": 0,
 "path": "res://Scripts/UI/mainmenu.gd",
+"type": "file"
+}, {
+"column": 0,
+"current": true,
+"line": 10,
+"path": "res://Scripts/Utils/enemy_spawner.gd",
+"type": "file"
+}, {
+"column": 4,
+"line": 4,
+"path": "res://Scripts/Core/enemy.gd",
 "type": "file"
 }]
 project/breakpoints={
 "res://Scenes/Prototyping/player_move_and_shoot.gd": PackedInt32Array(3),
+"res://Scripts/Core/enemy.gd": PackedInt32Array(),
 "res://Scripts/Player/player_move_and_shoot.gd": PackedInt32Array(),
 "res://Scripts/UI/Videoscript.gd": PackedInt32Array(),
 "res://Scripts/UI/controls.gd": PackedInt32Array()

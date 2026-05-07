@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://s5jf7yuu7166"]
 
-[node name="EnemyChasing" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://cfto5xdiaq4xj" path="res://Scenes/Prototyping/enemy.tscn" id="1_w5adu"]
+
+[node name="EnemyChasing" type="Node2D" unique_id=1650958704]
+
+[node name="Enemy" parent="." unique_id=1174540543 instance=ExtResource("1_w5adu")]

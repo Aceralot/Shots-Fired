@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cfto5xdiaq4xj"]
+
+[ext_resource type="Script" uid="uid://b4b7xjle5gnhc" path="res://Scripts/Core/enemy.gd" id="1_gorhj"]
+[ext_resource type="Texture2D" uid="uid://dl6vbghs72nh2" path="res://Assets/Sprite/Enemy .png" id="2_5bh0a"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wlrqd"]
+radius = 15.0
+height = 62.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfuyl"]
+atlas = ExtResource("2_5bh0a")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy0d8"]
+atlas = ExtResource("2_5bh0a")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ldh3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfuyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy0d8")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1174540543]
+script = ExtResource("1_gorhj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=405697487]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wlrqd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1224839900]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_3ldh3")
+animation = &"Idle"
