@@ -20,6 +20,7 @@ var nav_stack: Array[Control] = []
 var current_panel
 
 func _ready():
+	grab_focus()
 	current_panel = menu
 	_show_panel(menu)
 	_update_back_button()

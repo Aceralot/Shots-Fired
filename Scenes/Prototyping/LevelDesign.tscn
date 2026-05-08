@@ -77,5 +77,5 @@ shape = SubResource("WorldBoundaryShape2D_riaij")
 position = Vector2(229, 269)
 shape = SubResource("WorldBoundaryShape2D_riaij")
 
-[connection signal="scored" from="Player" to="Player" method="_on_player_scored"]
 [connection signal="scored" from="Player" to="Player" method="_on_scored"]
+[connection signal="scored" from="Player" to="Player" method="_on_player_scored"]

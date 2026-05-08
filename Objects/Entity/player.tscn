@@ -15,10 +15,27 @@ signal health_depleted
 signal scored
 
 var helath = 100
+var deadzone: float = 0.1
+var rotation_speed: float = 5.0
+var target_angle: float
+
+
 
 func _process(delta: float) -> void:
-	look_at( get_global_mouse_position())
-	pass
+	#look_at( get_global_mouse_position())
+	
+	
+	var input_vec: Vector2 = Vector2(
+		Input.get_joy_axis(0, JOY_AXIS_RIGHT_X),
+		Input.get_joy_axis(0, JOY_AXIS_RIGHT_Y)
+	)
+	if input_vec.length() >= deadzone:
+		target_angle = input_vec.angle() + deg_to_rad( 360.0 )
+
+	if rotation!= target_angle:
+		var rotation_lerp_weight: float = 1.0 - exp( -rotation_speed * delta)
+		rotation = lerp_angle( rotation, target_angle, rotation_lerp_weight )
+
 
 
 func _physics_process(delta) -> void:
@@ -115,6 +132,7 @@ scale = Vector2(5, 5)
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1572353922]
 modulate = Color(1, 1, 1, 0.49995005)
+scale = Vector2(1.5000001, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=761902779]
 position = Vector2(-1, 0.5)
