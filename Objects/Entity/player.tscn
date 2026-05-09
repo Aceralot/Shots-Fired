@@ -18,7 +18,7 @@ var helath = 100
 var deadzone: float = 0.1
 var rotation_speed: float = 5.0
 var target_angle: float
-
+@onready var enemy: CharacterBody2D = $\"./Hitbox\"
 
 
 func _process(delta: float) -> void:
@@ -46,6 +46,7 @@ func _physics_process(delta) -> void:
 	
 	velocity = direction * SPEED
 	move_and_slide()
+	
 	
 	var DAMAGE_RATE = 50
 	var overlapping_mobs = $HitBox.get_overlapping_areas()

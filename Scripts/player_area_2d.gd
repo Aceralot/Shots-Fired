@@ -34,3 +34,8 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 
+
+
+func _on_area_entered(area: Area2D) -> void:
+	score += 1
+	scored.emit()
