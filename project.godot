@@ -108,13 +108,12 @@ project/editorState=[{
 "path": "res://Scripts/Utils/enemy_spawner.gd",
 "type": "file"
 }, {
-"column": 0,
-"line": 0,
+"column": 34,
+"line": 33,
 "path": "res://Scripts/Core/enemy.gd",
 "type": "file"
 }, {
 "column": 0,
-"current": true,
 "line": 0,
 "path": "res://Scripts/UI/score.gd",
 "type": "file"
