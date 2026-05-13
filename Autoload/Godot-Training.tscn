@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://8x4gdllcr2h"]
 
-[node name="Control" type="CanvasLayer"]
+[node name="Control" type="CanvasLayer" unique_id=1806108717]
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=671032109]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 13.5
@@ -10,9 +10,11 @@ offset_top = 11.5
 offset_right = 132.5
 offset_bottom = 51.5
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Label" type="Label" parent="Control" unique_id=748209910]
 texture_filter = 1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Godot-Training "
+offset_left = -6.5
+offset_top = -6.5
+offset_right = 263.5
+offset_bottom = 42.5
+text = "Version 1.0 (Updates Coming Soon!)"

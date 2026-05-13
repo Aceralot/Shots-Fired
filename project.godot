@@ -14,7 +14,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Shots-Fired"
+config/name="Shots-Fired!"
 run/main_scene="res://Objects/UI/MainMenu.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/Sprite/icon.svg"
@@ -108,12 +108,13 @@ project/editorState=[{
 "path": "res://Scripts/Utils/enemy_spawner.gd",
 "type": "file"
 }, {
-"column": 34,
+"column": 0,
 "line": 33,
 "path": "res://Scripts/Core/enemy.gd",
 "type": "file"
 }, {
 "column": 0,
+"current": true,
 "line": 0,
 "path": "res://Scripts/UI/score.gd",
 "type": "file"
@@ -128,3 +129,4 @@ project/breakpoints={
 "res://Scripts/player_area_2d.gd": PackedInt32Array()
 }
 project/disabled_breakpoints={}
+project/xogot_game_id="3130_shots-fired"

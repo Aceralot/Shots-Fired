@@ -150,6 +150,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="ScoreLabel" type="Label" parent="UILayer/UI" unique_id=2005625282]
+visible = false
 layout_mode = 0
 offset_left = 23.0
 offset_top = 36.0
