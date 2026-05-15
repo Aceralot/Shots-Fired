@@ -1,5 +1,6 @@
 extends Control
 
+@onready var main_menu_music: AudioStreamPlayer2D = $MainMenuMusic
 @export var menu: VBoxContainer
 @export var start: Button
 @export var main_settings: VBoxContainer
@@ -20,6 +21,9 @@ var nav_stack: Array[Control] = []
 var current_panel
 
 func _ready():
+	$MainMenuMusic.play()
+	print("Music is playing")
+		
 	grab_focus()
 	current_panel = menu
 	_show_panel(menu)

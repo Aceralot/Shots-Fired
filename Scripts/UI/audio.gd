@@ -5,7 +5,7 @@ extends VBoxContainer
 @export var sfx_slider: HSlider
 
 const MIN_DB = -60.0
-const MAX_DB = 0.0
+const MAX_DB = 100.0
 
 func _ready():
 	_sync_sliders()

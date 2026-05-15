@@ -114,9 +114,24 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"current": true,
 "line": 0,
 "path": "res://Scripts/UI/score.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 24,
+"path": "res://Scripts/UI/mainmenu.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 8,
+"path": "res://Scripts/UI/audio.gd",
+"type": "file"
+}, {
+"column": 0,
+"current": true,
+"line": 41,
+"path": "/private/var/mobile/Containers/Shared/AppGroup/DE2F46C9-9711-400D-BBB2-309BE3E5307E/File Provider Storage/Repositories/Shots-Fired/Scripts/UI/audio.gd",
 "type": "file"
 }]
 project/breakpoints={

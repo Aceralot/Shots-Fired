@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cxp4wjk05fhkw" path="res://Scripts/UI/audio.gd" id="3_s1fko"]
 [ext_resource type="Script" uid="uid://2mxdmrwb6p25" path="res://Scripts/UI/Language.gd" id="4_hjnax"]
 [ext_resource type="Script" uid="uid://dc68rv8fur4n7" path="res://Scripts/UI/controls.gd" id="4_ne2t5"]
+[ext_resource type="AudioStream" uid="uid://c6uym7wtc1bpa" path="res://Assets/Audio/Main Menu Music.mp3" id="6_jioli"]
 
 [node name="MainMenu" type="Control" unique_id=1115050847 node_paths=PackedStringArray("menu", "start", "main_settings", "video_settings", "audio_settings", "controls_settings", "language_settings", "back_button", "quit", "settings_button", "video_button", "audio_button", "controls_button", "language_button")]
 texture_filter = 1
@@ -458,3 +459,10 @@ grow_vertical = 0
 scale = Vector2(5, 5)
 pivot_offset = Vector2(30, 15)
 text = "Back"
+
+[node name="MainMenuMusic" type="AudioStreamPlayer2D" parent="." unique_id=725892951]
+stream = ExtResource("6_jioli")
+volume_db = 24.012
+autoplay = true
+bus = &"Music"
+parameters/looping = true
