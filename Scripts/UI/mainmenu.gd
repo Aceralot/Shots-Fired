@@ -21,7 +21,7 @@ var nav_stack: Array[Control] = []
 var current_panel
 
 func _ready():
-	$MainMenuMusic.play()
+	$MainMenuMusic.play
 	print("Music is playing")
 		
 	grab_focus()

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://na8uqw2rafhm" path="res://Scripts/UI/mainmenu.gd" id="1_hhbtw"]
 [ext_resource type="Script" uid="uid://bngg7aicew1kj" path="res://Scripts/UI/Videoscript.gd" id="2_jioli"]
-[ext_resource type="Script" uid="uid://cxp4wjk05fhkw" path="res://Scripts/UI/audio.gd" id="3_s1fko"]
+[ext_resource type="Script" uid="uid://cxp4wjk05fhkw" path="res://Scripts/UI/audio.gd" id="3_jioli"]
 [ext_resource type="Script" uid="uid://2mxdmrwb6p25" path="res://Scripts/UI/Language.gd" id="4_hjnax"]
 [ext_resource type="Script" uid="uid://dc68rv8fur4n7" path="res://Scripts/UI/controls.gd" id="4_ne2t5"]
-[ext_resource type="AudioStream" uid="uid://c6uym7wtc1bpa" path="res://Assets/Audio/Main Menu Music.mp3" id="6_jioli"]
+[ext_resource type="AudioStream" uid="uid://d1nmdu035nrgn" path="res://Assets/Audio/Main Menu Music.wav" id="6_jioli"]
 
 [node name="MainMenu" type="Control" unique_id=1115050847 node_paths=PackedStringArray("menu", "start", "main_settings", "video_settings", "audio_settings", "controls_settings", "language_settings", "back_button", "quit", "settings_button", "video_button", "audio_button", "controls_button", "language_button")]
 texture_filter = 1
@@ -278,7 +278,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5, 5)
 pivot_offset = Vector2(100, 75)
-script = ExtResource("3_s1fko")
+script = ExtResource("3_jioli")
 master_slider = NodePath("HBoxContainer/Master")
 music_slider = NodePath("HBoxContainer2/Music")
 sfx_slider = NodePath("HBoxContainer3/SFX")
@@ -462,7 +462,7 @@ text = "Back"
 
 [node name="MainMenuMusic" type="AudioStreamPlayer2D" parent="." unique_id=725892951]
 stream = ExtResource("6_jioli")
-volume_db = 24.012
+volume_db = -5.0
 autoplay = true
 bus = &"Music"
-parameters/looping = true
+area_mask = 1023

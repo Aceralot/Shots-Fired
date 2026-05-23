@@ -119,7 +119,8 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"line": 24,
+"current": true,
+"line": 23,
 "path": "res://Scripts/UI/mainmenu.gd",
 "type": "file"
 }, {
@@ -129,8 +130,7 @@ project/editorState=[{
 "type": "file"
 }, {
 "column": 0,
-"current": true,
-"line": 41,
+"line": 9,
 "path": "/private/var/mobile/Containers/Shared/AppGroup/DE2F46C9-9711-400D-BBB2-309BE3E5307E/File Provider Storage/Repositories/Shots-Fired/Scripts/UI/audio.gd",
 "type": "file"
 }]
