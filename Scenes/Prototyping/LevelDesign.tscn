@@ -176,5 +176,5 @@ volume_db = 5.0
 autoplay = true
 area_mask = 1023
 
-[connection signal="scored" from="Player" to="Player" method="_on_player_scored"]
 [connection signal="scored" from="Player" to="Player" method="_on_scored"]
+[connection signal="scored" from="Player" to="Player" method="_on_player_scored"]

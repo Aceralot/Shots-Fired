@@ -464,5 +464,4 @@ text = "Back"
 stream = ExtResource("6_jioli")
 volume_db = -5.0
 autoplay = true
-bus = &"Music"
 area_mask = 1023
